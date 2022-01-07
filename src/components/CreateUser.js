@@ -5,6 +5,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import './CreateUser.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+//material ui theme
 const theme = createTheme({
     palette: {
         primary: {
@@ -22,6 +23,7 @@ function CreateUser() {
     const [phone, setPhone] = useState("");
     const [address, setAddress] = useState("");
 
+    //apply setState to targeted field onChange
     function handleInputChange(event) {
         switch (event.target.name) {
             case "name":
@@ -41,6 +43,7 @@ function CreateUser() {
         }
     }
 
+    //bundle data to POST to API/save 
     function handleSubmit(event) {
         event.preventDefault();
         const POSTurl = 'https://r41eck9sxb.execute-api.us-east-1.amazonaws.com/dev/save';
@@ -65,6 +68,7 @@ function CreateUser() {
             })
     }
 
+    //display form
     return (
         <div id="createUser__form">
             <ThemeProvider theme={theme}>

@@ -6,6 +6,7 @@ import CreateUser from './CreateUser.js';
 import ListUsers from './ListUsers';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+// material ui theme
 const theme = createTheme({
     palette: {
         primary: {
@@ -37,6 +38,7 @@ function Users() {
         setTabValue(newValue);
     };
 
+    //navigation menu for creating users and listing users
     return (
         <div className='usersContainer'>
             <ThemeProvider theme={theme}>

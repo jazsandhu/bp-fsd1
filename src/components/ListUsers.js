@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import './ListUsers.css';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+//material ui theme
 const theme = createTheme({
     palette: {
         primary: {
@@ -14,6 +15,7 @@ const theme = createTheme({
     },
 });
 
+//display user data
 function User(props) {
     return (
         <div className='userContainer'>
@@ -41,6 +43,7 @@ function User(props) {
 function ListUsers() {
     const [usersList, setUsersList] = useState([]);
 
+    //retrieve users list
     useEffect(() => {
         fetch('https://r41eck9sxb.execute-api.us-east-1.amazonaws.com/dev/id')
             .then((res) => {
@@ -53,10 +56,12 @@ function ListUsers() {
             })
     }, []);
 
+    //iterate through usersList and call User to display data
     const listUsers = usersList.map((data, i) => {
         return <User data={data} key={i} />
     });
 
+    //invoke JSX variable to display users data
     return (
         <div>
             {listUsers}
