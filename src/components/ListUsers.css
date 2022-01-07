@@ -1,0 +1,41 @@
+.userContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin: 0 15%;
+  border-bottom: rgb(180, 180, 180) 1px solid;
+}
+.userContainer:first-child{
+    margin-top: 50px;
+}
+
+.user__infoContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 2px 10px;
+  width: fit-content;
+}
+
+.user__buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  margin: 0px 10px;
+  width: fit-content;
+  height: fit-content;
+}
+
+.user__buttons {
+    margin-right: 20px !important;
+    background-color: none !important;
+}
+
+.user__name{
+    font-size: large;
+}
+
+.user__info{
+    font-size: small;
+    color: gray;
+}

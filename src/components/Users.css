@@ -1,3 +1,7 @@
 .usersContainer {
   width: 100%;
 }
+
+#tabNaviation {
+  background-color: #5F30F0 !important;
+}
