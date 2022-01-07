@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# BrokerPocket - Technical Assessment - Entry
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I will be giving information regarding my progression; completed tasks in parallel to complications and my analysis.
 
-## Available Scripts
+Application (AWS S3) URL: http://userprocessing-aws.s3-website-us-east-1.amazonaws.com/
 
-In the project directory, you can run:
+## Completed Tasks
+#### Based on BrokerPocket Documentation
 
-### `npm start`
+- Reactjs application customized with Material-UI library components
+- Reactjs form to collect data
+- Hosted web application on AWS S3
+- Functional Lambda function & API Gateway implementation to retrieve MongoDB list of users and display them through Reactjs application
+- Created and configured MongoDB collection for Users
+- MongoDB collection contains multiple unique records for entries
+- Lambda functions execute logs to CloudWatch Logs
+- CloudWatch Logs have 30 day retention policy
+- IAM roles and policies created
+- API Gateway has 2 stages - Dev & Prod
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Incompleted Tasks
+#### Based on BrokerPocket Documentation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- API path for '/save' incomplete - Complications with API Gateway CORS policy & Mapping Template wiping parameters being passed from Reactjs. Reactjs form & functionality complete. Lambda function complete with functional inserts of records to MongoDB collection. 
+- Functional API path for single record retrieval '/id/id_value'
 
-### `npm test`
+## Further Complications and Comments
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- CORS policy held me back a number of hours. Went through it once with displaying all records, fixed it without full understanding. Happened again when saving new users to the database. 
+  - Realized both were from API Gateways configurations and solved by checking off OPTIONS, DEFAULT 4XX & DEFAULT 5XX.
+- Figuring out how to install dependencies and initializing npm in Lambda.
+  - Solved by created a new folder to do these configurations through Visual Studio CLI. Placed the files into a zipped folder and uploaded it to my Lambda function after.
+- I created multiple Lambda functions to separate/modularize my code due to hours wasted with complications. Code became messy and not a fan of the Amazon Lambda IDE, extremely small window and text.
+  - I can see where working within a single function with multiple exposed endpoints may be more beneficial in the long run. Larger tasks seem as though they would become cumbersome when creating similar tasks accross multiple Lambda functions.
