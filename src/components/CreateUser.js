@@ -39,29 +39,26 @@ function CreateUser() {
             default:
                 break;
         }
-        console.log(event.target.name + " = " + event.target.value);
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log("submission");
-        const POSTurl = 'https://r41eck9sxb.execute-api.us-east-1.amazonaws.com/dev/save'
-        const POSTdata = {
-            name: name,
-            email: email,
-            phone: phone,
-            address: address
-        }
+        const POSTurl = 'https://r41eck9sxb.execute-api.us-east-1.amazonaws.com/dev/save';
         const POSTparameters = {
-            body: POSTdata,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: {
+                name: name,
+                email: email,
+                phone: phone,
+                address: address,
+            },
             method: "POST"
         }
-        fetch(POSTurl, POSTparameters, {
-            mode: 'cors',
-            credentials: 'include'
-        })
+        fetch(POSTurl, POSTparameters)
             .then((data) => {
-                return data.json()
+                return data.json();
             })
             .then(res => {
                 console.log(res);
@@ -101,7 +98,7 @@ function CreateUser() {
                         name="phone"
                         variant="filled"
                         color="secondary"
-                        type="tel"
+                        type="text"
                     />
                 </div>
                 <div className="createUser__formContainer">
