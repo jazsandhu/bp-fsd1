@@ -21,7 +21,8 @@ Application (AWS S3) URL: http://userprocessing-aws.s3-website-us-east-1.amazona
 ## Incompleted Tasks
 #### Based on BrokerPocket Documentation
 
-- API path for '/save' incomplete - Complications with API Gateway CORS policy & Mapping Template wiping parameters being passed from Reactjs. Reactjs form & functionality complete. Lambda function complete with functional inserts of records to MongoDB collection. 
+- API path for '/save' incomplete - Complications with API Gateway CORS policy & Mapping Template wiping parameters being passed from Reactjs. 
+  - Reactjs form & functionality complete. Lambda function complete with functional inserts of records to MongoDB collection. 
 - Functional API path for single record retrieval '/id/id_value'
 
 ## Further Complications and Comments
