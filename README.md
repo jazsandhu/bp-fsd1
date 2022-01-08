@@ -33,3 +33,9 @@ Application (AWS S3) URL: http://userprocessing-aws.s3-website-us-east-1.amazona
   - Solved by created a new folder to do these configurations through Visual Studio CLI. Placed the files into a zipped folder and uploaded it to my Lambda function after.
 - I created multiple Lambda functions to separate/modularize my code due to hours wasted with complications. Code became messy and not a fan of the Amazon Lambda IDE, extremely small window and text.
   - I can see where working within a single function with multiple exposed endpoints may be more beneficial in the long run. Larger tasks seem as though they would become cumbersome when creating similar tasks accross multiple Lambda functions.
+
+## Next Steps
+
+- Figure out how to properly map POST body passed through React to API Gateway for successfull requests
+- Complete '/id/id_value' API configuration and Reactjs code to successfully GET single user data
+- Merge Lambda functions for easier management, processing and scalability
